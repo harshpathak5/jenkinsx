@@ -1,0 +1,46 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+cluster:
+  clusterName: "jenkinsx-project"
+  devEnvApprovers: []
+  environmentGitOwner: ""
+  project: "jenkinsx-303521"
+  provider: gke
+  zone: "us-central1-a"
+gitops: true
+environments:
+- key: dev
+- key: staging
+- key: production
+ingress:
+  domain: ""
+  externalDNS: false
+  tls:
+    email: ""
+    enabled: false
+    production: true
+kaniko: true
+storage:
+  backup:
+    enabled: false
+  logs:
+    enabled: true
+    url: gs://logs-jenkinsx-project-4a62e54a7bbc
+  reports:
+    enabled: true
+    url: gs://reports-jenkinsx-project-4a62e54a7bbc
+  repository:
+    enabled: true
+    url: gs://repository-jenkinsx-project-4a62e54a7bbc
+secretStorage: vault
+vault:
+  name: jenkinsx-project
+  bucket: vault-jenkinsx-project-4a62e54a7bbc
+  key: crypto-key-jenkinsx-project-4a62e54a7bbc
+  keyring: keyring-jenkinsx-project-4a62e54a7bbc
+  serviceAccount: jenkinsx-project-vt
+versionStream:
+  ref: master
+  url: https://github.com/jenkins-x/jenkins-x-versions.git
+webhook: "lighthouse"
